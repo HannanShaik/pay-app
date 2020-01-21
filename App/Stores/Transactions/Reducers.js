@@ -28,6 +28,14 @@ export const fetchTransactionsFailure = (state, { errorMessage }) => ({
   errorMessage: errorMessage,
 })
 
+export const updateTransactionStatus = (state, { status }) => {
+  state.transactions.map(transaction => {
+    transaction.state = status
+  })
+
+  return { transactions: state.transactions }
+}
+
 /**
  * @see https://github.com/infinitered/reduxsauce#createreducer
  */
@@ -35,4 +43,5 @@ export const reducer = createReducer(INITIAL_STATE, {
   [TransactionTypes.FETCH_TRANSACTIONS_LOADING]: fetchTransactionsLoading,
   [TransactionTypes.FETCH_TRANSACTIONS_SUCCESS]: fetchTransactionsSuccess,
   [TransactionTypes.FETCH_TRANSACTIONS_FAILURE]: fetchTransactionsFailure,
+  [TransactionTypes.UPDATE_TRANSACTION_STATUS]: updateTransactionStatus,
 })

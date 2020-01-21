@@ -5,6 +5,7 @@ const { Types, Creators } = createActions({
   fetchTransactionsLoading: null,
   fetchTransactionsSuccess: ['transactionInfo'],
   fetchTransactionsFailure: ['errorMessage'],
+  updateTransactionStatus: ['status']
 })
 
 export const TransactionTypes = Types

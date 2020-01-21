@@ -36,7 +36,10 @@ class HomeScreen extends React.Component {
                 />}
                 keyExtractor={item => item.id}
               />
-              <Button style={styles.updateButton} title="Update Status" />
+              <Button
+                onPress={this.props.updateTransactionStatus}
+                style={styles.updateButton}
+                title="Update Status" />
             </View>
           )}
       </View>
@@ -63,6 +66,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchTransactions: () => dispatch(TransactionActions.fetchTransactions()),
+  updateTransactionStatus: () => dispatch(TransactionActions.updateTransactionStatus('REFUNDED'))
 })
 
 export default connect(
