@@ -29,4 +29,11 @@ export default StyleSheet.create({
     marginBottom: Metrics.tiny,
     textAlign: 'center',
   },
+  listContainer: {
+    flex: 1
+  },
+  updateButton: {
+    position: 'absolute',
+    bottom: 30
+  }
 })
