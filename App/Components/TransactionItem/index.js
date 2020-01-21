@@ -10,8 +10,10 @@ const getColor = (status) => {
       return 'green'
     case 'REFUNDED':
       return 'red'
+    case 'CANCELLED':
+      return 'red'
     default:
-      return 'yellow'
+      return 'orange'
   }
 }
 
